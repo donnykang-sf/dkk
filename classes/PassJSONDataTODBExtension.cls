@@ -24,7 +24,6 @@ public with sharing class PassJSONDataTODBExtension {
 		accs += ']';
 		*/
 
-		/* 把转换成JSON格式 */
 		accs = JSON.serialize(accList);
 
 		System.debug('Accounts:' + accs);

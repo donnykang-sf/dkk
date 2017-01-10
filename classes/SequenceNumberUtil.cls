@@ -1,22 +1,7 @@
-/****************************************************************************
-Class Name  : FunctionSwitch
-Created By  : Donny Kang
-Created Date: 2016/06/29
-Description :
-	1. Fetch Sequence Number
-
-Modify History:
-    * Version    Date         Author       	   Content
-    * ------- 	 ----------   --------------   -----------------------------
-    * 1.0 		 2016/06/29   Donny Kang       Init，Desc1
-
-****************************************************************************/
 public class SequenceNumberUtil {
 	
-	// Get Current Sequence Number
 	static Sequence__c seq = Sequence__c.getInstance('SequenceNumber');
 
-	// Init Sequence Number
 	static{
 		if(seq == null){
 			seq = new Sequence__c();
@@ -28,7 +13,6 @@ public class SequenceNumberUtil {
 		}
 	}
 
-	// Get Sequence Number
 	public static String getSequenceNumber(){
 		if(seq.Date__c == null || seq.Date__c != System.today()){
 			seq.Date__c = System.today();

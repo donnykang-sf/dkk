@@ -1,16 +1,3 @@
-/****************************************************************************
-Class Name  : FunctionSwitch
-Created By  : Donny Kang
-Created Date: 2016/06/29
-Description :
-	1. Init Function Switch
-
-Modify History:
-    * Version    Date         Author       	   Content
-    * ------- 	 ----------   --------------   -----------------------------
-    * 1.0 		 2016/06/29   Donny Kang       Init，Desc1
-
-****************************************************************************/
 public class FunctionSwitch {
 
 	// Open Debug
