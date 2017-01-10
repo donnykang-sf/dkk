@@ -18,7 +18,7 @@ public with sharing class LeadConvertedExtension {
 
     	// Convert Single Lead;
     	try{
-    		//Database.LeadConvertResult lResult = Database.convertLead(LeadConvertedExtension.convertLead(currLead), TRUE);
+    		Database.LeadConvertResult lResult = Database.convertLead(convertLead(currLead), TRUE);
     	}catch(Exception e){
     		System.debug(e.getLineNumber() + ':' + e.getMessage());
     	}
@@ -33,7 +33,7 @@ public with sharing class LeadConvertedExtension {
     }
 
     // Convert Single lead
-    public static Database.LeadConvert convertLead(Lead lead){
+    static Database.LeadConvert convertLead(Lead lead){
 
     	LeadStatus convertStatus = [SElECT Id, MasterLabel
     								FROM LeadStatus

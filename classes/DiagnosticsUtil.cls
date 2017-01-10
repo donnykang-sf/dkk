@@ -12,18 +12,13 @@ Modification Log:
 
 *****************************************************************************/
 public class DiagnosticsUtil {
-    
+	
 	public static Boolean diagnosticsEnabled = FunctionSwitch.isDiagnosticsEnabled();
 
 	// Static Constant
-	public static String DIAG_ACCOUNT = '客户日志';
-    public static String DIAG_ORDER = '订单日志';
-    public static String DIAG_APPROVAL = '审批日志';
-    public static String DIAG_INTERFACE = '接口日志';
 	
-	// Current Level
+	//
 	private static Integer currentLevel = 0;
-	// Diagnostic Messages
 	private static List<DiagnosticEntry> diagnosticsLog = new List<DiagnosticEntry>();
 
 	/*
@@ -106,8 +101,8 @@ public class DiagnosticsUtil {
     public static void debugException(Exception ex, String debugObj){
     	String exceptionInfo = 'Exception Line:';
     	exceptionInfo += ex.getLineNumber();
-    	exceptionInfo += '-' + ex.getMessage();
-    	exceptionInfo += 'Exception Message:' + ex.getStackTraceString();
+    	exceptionInfo += newLine() + 'Exception Message:' + ex.getMessage();
+    	exceptionInfo += newLine() + 'Exception Throw:' + ex.getStackTraceString();
 
     	debug(exceptionInfo);
 
@@ -151,11 +146,19 @@ public class DiagnosticsUtil {
     }
 	*/
 
+    static String newLine(){
+    	String newLine = '\n';
+    	for(Integer i = 0; i < currentLevel; i++){
+    		newLine += '    ';
+    	}
+
+    	return newLine;
+    }
+
 	private class DiagnosticEntry{
 
 		Integer level;
 		String description;
-
 		
 		public DiagnosticEntry(String entryDesc){
 			level = currentLevel;
