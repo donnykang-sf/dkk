@@ -16,9 +16,14 @@ public class DiagnosticsUtil {
 	public static Boolean diagnosticsEnabled = FunctionSwitch.isDiagnosticsEnabled();
 
 	// Static Constant
+	public static String DIAG_ACCOUNT = '客户日志';
+    public static String DIAG_ORDER = '订单日志';
+    public static String DIAG_APPROVAL = '审批日志';
+    public static String DIAG_INTERFACE = '接口日志';
 	
-	//
+	// Current Level
 	private static Integer currentLevel = 0;
+	// Diagnostic Messages
 	private static List<DiagnosticEntry> diagnosticsLog = new List<DiagnosticEntry>();
 
 	/*
